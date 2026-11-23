@@ -573,6 +573,22 @@ img { max-width: 100%; display: block; }
   margin: 0 0 18px;
   font-size: .97rem;
 }
+/* Linki wewnątrz ciągłego tekstu dostają podkreślenie — inaczej niż
+   w menu czy na kartach, gdzie o roli linku mówi już samo miejsce.
+   Powód: zieleń linku (--green #3e4d3a) jest bardzo bliska kolorowi
+   tekstu zastrzeżenia (--ink-soft #4a4f45), więc bez podkreślenia link
+   byłby tam praktycznie niewidoczny. Podkreślenie to też wymóg
+   dostępności — kolor nie może być jedynym wyróżnikiem linku. */
+.article-body a,
+.disclaimer a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+.article-body a:hover,
+.disclaimer a:hover {
+  color: var(--green-dark);
+}
 /* "Artykuł dotyczy:" — widoczne tylko gdy wpis należy do kilku działów */
 .article-sections {
   max-width: 700px;

@@ -124,8 +124,23 @@
           </div>
           {%- endif %}
 
+          {%- comment -%}
+            Zastrzeżenie na końcu artykułu. Ostatnie zdanie odsyła do kancelarii
+            — to miejsce, w którym czytelnik właśnie dowiedział się, że jego
+            sprawa wymaga indywidualnej analizy.
+
+            Parametry utm_* w adresie nie są żadnym skryptem śledzącym: to po
+            prostu dopisek w linku, który statystyki kancelarii pokazują jako
+            źródło wejścia. Dzięki nim widać, że wejście pochodzi z tego
+            zastrzeżenia (utm_content) i z którego artykułu (utm_term) —
+            w odróżnieniu od wejść z paska CTA, menu i stopki, które takiego
+            dopisku nie mają.
+
+            Znak & zapisujemy jako &amp;, bo tego wymaga poprawny HTML.
+            Parametry muszą stać PRZED #kontakt, inaczej trafią do kotwicy.
+          {%- endcomment -%}
           <div class="disclaimer">
-            Artykuł ma charakter wyłącznie informacyjny i nie stanowi porady prawnej. Stan prawny może ulec zmianie, a każda sprawa wymaga indywidualnej analizy. W razie wątpliwości skontaktuj się z adwokatem.
+            Artykuł ma charakter wyłącznie informacyjny i nie stanowi porady prawnej. Stan prawny może ulec zmianie, a każda sprawa wymaga indywidualnej analizy. W razie wątpliwości <a href="https://adwokatmodzelewski.pl/?utm_source=prawomundurowych.pl&amp;utm_medium=referral&amp;utm_content=disclaimer&amp;utm_term={{ page.slug }}#kontakt" rel="noopener">skontaktuj się z adwokatem</a>.
           </div>
         </div>
 
